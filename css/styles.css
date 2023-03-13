@@ -37,7 +37,9 @@ img {
 .link {
     text-decoration: none;
 }
-
+.no-scroll {
+    overflow: hidden;
+}
 h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
     padding: 0;
@@ -61,6 +63,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
 .header {
     border-bottom: 1px solid #E7E9FC;
 box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+.main-header {
+    display: flex;
+    align-items: center;
 }
 
 /*Logo*/
@@ -173,6 +179,11 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     display: block;
     margin-left: auto;
     margin-bottom: 32px;
+}
+.menu-mob.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 /* .mob-nav {
     margin-bottom: 284px;
@@ -369,7 +380,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         flex-wrap: wrap;
         gap: 16px;
         width: 100%;
-        justify-content: space-between;
+        justify-content: center;
     }
     .customers-item {
         display: flex;
@@ -377,8 +388,9 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         height: 88px;
         margin-bottom: 72px;
         background: var(--primary-bg-color);
+        
     }
-    .customers-item:nth-child(5n),
+
     .customers-item:nth-child(6n) {
             margin-bottom: 0;
     }
@@ -534,42 +546,221 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     background-image: url(../images/icon-send.svg);
     }
 
+    /* Backdrop + modal*/
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: rgba(46, 47, 66, 0.4);
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 72px 16px 24px 16px;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    max-width: 392px;
+    width: calc(100% - 32px);
+    height: 586px;
+    background: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.modal-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button:hover,
+.modal-button:active {
+    background-color: #404BBF;
+    border: 1px solid #404BBF;
+    fill: #fff;
+}
+.close-icon {
+    width: 100%;
+    height: 100%;
+}
+
+/* Modal-table */
+
+.form-title {
+font-weight: 500;
+text-align: center;
+color: var(--title-text-color);
+margin-bottom: 16px;
+}
+.label-text {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+.label-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 8px;
+}
+.input-item {
+    padding-left: 38px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    font-size: 12px;
+    line-height: 14px;
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1),;
+}
+.label-icon {
+    position: absolute;
+    top: 45%;
+    margin-left: 19px;
+}
+.textarea-item {
+    resize: none;
+    padding-top: 8px;
+    padding-left: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    font-size: 12px;
+    line-height: 14px;
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.comment {
+    margin-bottom: 16px;
+}
+.label-privacy {
+    position: relative;
+    display: flex;
+    left: 0;
+}
+.textarea-item:focus,
+.input-item:focus {
+    outline: 1px solid #4D5AE5;
+}
+.input-item:focus ~ .label-icon {
+    fill: #4D5AE5;
+}
+.checkbox-item {
+    appearance: none;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px; 
+    
+}
+.checkbox-item:checked + .check-icon {
+    background: #404BBF;
+    fill: #FFFFFF;
+    border: 1.25px solid #404BBF;
+    border-radius: 2px;
+    outline: transparent;
+}
+.check-icon {
+    fill: transparent;
+    margin-right: 8px;
+}
+.checkbox-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+}
+.checkbox-link {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: #4D5AE5;
+}
+.button-send {
+    padding: 16px 32px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 0;
+    min-width: 169px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    background: #4D5AE5;
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+}
 
 
-    @media screen and (min-width: 480px) {
-        .container {
-            width: 428px;
-        }
-
-        /* Secrion Hero */
-        .hero-title {
-            width: 320px;
-        }
-        .hero-bgi {
-            max-width: 428px;
-            height: 432px;
-        }
-        
-        /* Customers */
-        .customers-item {
-            width: calc((100% - 32px) / 2);
-        }
+@media screen and (min-width: 480px) {
+    .container {
+        width: 428px;
     }
 
+        /* Secrion Hero */
+    .hero-title {
+            width: 320px;
+    }
+    .hero-bgi {
+            max-width: 428px;
+            height: 432px;
+    }
+        
+        /* Customers */
+    .customers-item {
+        width: calc((100% - 32px) / 2);
+        margin-bottom: 72px;
+    }
+    .customers-item:nth-child(5n) {
+        margin-bottom: 0;
+    }
+    .customers {
+        justify-content: space-between;
+    }
+
+    .label-privacy {
+        align-items: center;
+    }
+}
 
 
-    @media screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
         .container {
             width: 736px;
         }
         /* Header */
         .site-nav .link,
         .contacts .link {
-            display: contents;
-        }
-        .main-header {
-            display: flex;
-            align-items: center;
+            display: block;
         }
         .site-nav {
             display: flex;
@@ -585,7 +776,14 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         .menu-mob-open {
             display: none;
         }
-        
+
+        /* Modal */
+        .modal {
+            padding: 72px 24px 24px 24px;
+            max-width: 408px;
+            width: calc(100% - 48px);
+            height: 586px;
+        }
     
         
 
@@ -670,7 +868,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 
 
 
-    @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
         .container {
             width: 1160px;
         }
@@ -695,6 +893,15 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         .site-nav .link {
             padding-top: 24px;
             padding-bottom: 24px;
+        }
+
+        /* Modal */
+
+        .modal {
+            padding: 72px 24px 24px 24px;
+            max-width: 408px;
+            width: calc(100% - 48px);
+            height: 584px;
         }
 
         /* Section Hero */
@@ -754,7 +961,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 
         /* Works */
         .section-works {
-            display: contents;
+            display: block;
         }
         .works-container {
             margin-bottom: 120px;
@@ -808,4 +1015,4 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         .sub-input {
             opacity: 1;
         }
-    }
+}
