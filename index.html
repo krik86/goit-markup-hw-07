@@ -15,7 +15,7 @@
 <body>
 
     <!--Header-->
-    <!-- <header class="header">
+    <header class="header">
         <div class="container main-header">
         <a href="./index.html" class="logo">
             <span class="logo-web">Web</span><span class="logo-studio">Studio</span>
@@ -31,13 +31,68 @@
 
         <address class="address">
             <ul class="contacts list">
-                <li class="address-list"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
+                <li class="address-list address-mail"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
                 <li class="address-list"><a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a></li>
             </ul>
         </address>
+        <button type="button" class="menu-mob-open" data-menu-open></button>
         </div>
 
-    </header> -->
+        <div class="menu-mob is-hidden" data-menu>
+            <div class="container">
+                <div>
+                    <button type="button" class="menu-mob-close" data-menu-close>
+                        <svg class="close-icon" width="8" height="8">
+                            <use href="./images/icons.svg#close-black"></use>
+                        </svg>
+                    </button> 
+                    <ul class="mob-nav list">
+                        <li class="mob-nav-item"><a href="./index.html" class="mob-current link">Studio</a></li>
+                        <li class="mob-nav-item"><a href="./portfolio.html" class="mob-current link">Portfolio</a></li>
+                        <li class="mob-nav-item"><a href="./contacts.html" class="mob-current link">Contacts</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <ul class="contacts-list list">
+                        <li class="mob-contacts"><a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a></li>
+                        <li class="mob-contacts"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
+                    </ul>
+                    <ul class="team-social-list list">
+                        <li class="team-soc-item">
+                            <a href="" class="team-social-link link">
+                                <svg class="social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#logo-instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="team-soc-item">
+                            <a href="" class="team-social-link link">
+                                <svg class="social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#logo-twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="team-soc-item">
+                            <a href="" class="team-social-link link">
+                                <svg class="social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#logo-facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="team-soc-item">
+                            <a href="" class="team-social-link link">
+                                <svg class="social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#logo-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
 
     <!--Main-->
 
@@ -79,7 +134,7 @@
         </section>
         <!--Our works-->
         <section class="section-works">
-            <div class="container">
+            <div class="container works-container">
             <h2 class="section-title">What are we doing</h2>
             <ul class="list works">
                 <li class="works-item">
@@ -322,19 +377,21 @@
 
     <!--Footer-->
 
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-stab">
-                <a href="./index.html" class="footer-logo">
-                    <span class="footer-web">Web</span><span class="footer-studio">Studio</span>
-                </a>
-                <p class="text-footer">
-                    Increase the flow of customers and
-                    sales for your business with digital
-                    marketing & growth solutions.
-                </p>
-            </div>
-        
+            <div class="footer-container-second">
+                <div class="footer-stab">
+                    <a href="./index.html" class="footer-logo">
+                        <span class="footer-web">Web</span><span class="footer-studio">Studio</span>
+                    </a>
+                    <p class="text-footer">
+                        Increase the flow of customers and
+                        sales for your business with digital
+                        marketing & growth solutions.
+                    </p>
+                </div>    
+            
+<!-- Footer social media -->
         <div class="footer-container-soc">
             <p class="footer-title-soc">Social media</p>
             <ul class="footer-list list">
@@ -367,20 +424,23 @@
                     </a>
                 </li>
             </ul>
-        </div> -->
+            </div>
+           </div>
             <!-- Subscribe -->
-
-            <!-- <form name="subscribe" class="subscribe">
+            
+            <form name="subscribe" class="subscribe">
                 <b class="footer-title-soc">Subscribe</b>
                 <div class="sub-form">
-                <label>
-                    <input type="email" name="email" placeholder="E-mail" class="sub-input">
-                </label>
-                <button type="submit" class="sub-button">Subscribe</button>
+                    <label>
+                        <input type="email" name="email" placeholder="E-mail" class="sub-input">
+                    </label>
+                    <button type="submit" class="sub-button">Subscribe</button>
                 </div>
             </form>
         </div>
-    </footer> -->
+        </div>
+
+    </footer>
 
     <!-- Backdrop + modal -->
 
@@ -437,5 +497,6 @@
     </div>
 
     <script src="./js/modal.js"></script> -->
+    <script src="./js/menu.js"></script>
 </body>
 </html>
