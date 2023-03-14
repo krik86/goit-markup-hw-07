@@ -22,19 +22,78 @@
         </a>
 
         <nav>
-                <ul class="site-nav list">
-                <li class="item"><a href="./index.html" class="link link-current">Studio</a></li>
-                <li class="item"><a href="./portfolio.html" class="link link-current activ">Portfolio</a></li>
+            <ul class="site-nav list">
+                <li class="item"><a href="./index.html" class="link link-current activ">Studio</a></li>
+                <li class="item"><a href="./portfolio.html" class="link link-current">Portfolio</a></li>
                 <li class="item"><a href="./contacts.html" class="link link-current">Contacts</a></li>
-                </ul>
+            </ul>
         </nav>
 
         <address class="address">
             <ul class="contacts list">
-                <li class="address-list"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
+                <li class="address-list address-mail"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
                 <li class="address-list"><a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a></li>
             </ul>
         </address>
+        <button type="button" class="menu-mob-open" data-menu-open >
+            <svg class="menu-open" width="32" height="22">
+                <use href="./images/icons.svg#booter"></use>
+            </svg>
+        </button>
+        </div>
+
+        <div class="menu-mob is-hidden" data-menu >
+            <div class="container">
+                <div>
+                    <button type="button" class="menu-mob-close" data-menu-close >
+                        <svg class="close-menu-icon" width="8" height="8">
+                            <use href="./images/icons.svg#close-menu"></use>
+                        </svg>
+                    </button> 
+                    <ul class="mob-nav list">
+                        <li class="mob-nav-item"><a href="./index.html" class="mob-current link">Studio</a></li>
+                        <li class="mob-nav-item"><a href="./portfolio.html" class="mob-current link">Portfolio</a></li>
+                        <li class="mob-nav-item"><a href="./contacts.html" class="mob-current link">Contacts</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <ul class="contacts-list list">
+                        <li class="mob-contacts"><a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a></li>
+                        <li class="mob-contacts"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
+                    </ul>
+                    <ul class="menu-social-list list">
+                        <li class="menu-soc-item">
+                            <a href="" class="menu-social-link link">
+                                <svg class="menu-social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#menu-instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="menu-soc-item">
+                            <a href="" class="menu-social-link link">
+                                <svg class="menu-social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#menu-twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="menu-soc-item">
+                            <a href="" class="menu-social-link link">
+                                <svg class="menu-social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#menu-facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="menu-soc-item">
+                            <a href="" class="menu-social-link link">
+                                <svg class="menu-social-logo" width="24" height="24">
+                                <use href="./images/icons.svg#menu-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </header>
@@ -49,15 +108,15 @@
                 <div>
                     <h1 class="title-portfolio"></h1>
                 </div>
-            <ul class="list button-list">
                 <div class="main-button">
-                <li class="button-item"><button type="button" class="button-portfolio">All</button></li>
-                <li class="button-item"><button type="button" class="button-portfolio">Web Site</button></li>
-                <li class="button-item"><button type="button" class="button-portfolio">App</button></li>
-                <li class="button-item"><button type="button" class="button-portfolio">Design</button></li>
-                <li class="button-item"><button type="button" class="button-portfolio">Marketing</button></li>
+                    <ul class="list button-list">
+                        <li class="button-item"><button type="button" class="button-portfolio">All</button></li>
+                        <li class="button-item"><button type="button" class="button-portfolio">Web Site</button></li>
+                        <li class="button-item"><button type="button" class="button-portfolio">App</button></li>
+                        <li class="button-item"><button type="button" class="button-portfolio">Design</button></li>
+                        <li class="button-item"><button type="button" class="button-portfolio">Marketing</button></li>
+                    </ul>
                 </div>
-            </ul>
                 <div>
                 <ul class="project-card list">
                     <li class="item-card">
@@ -299,6 +358,8 @@
             </form>
         </div>
     </footer>
+
+    <script src="./js/menu.js"></script>
 </body>
     
 </html>
