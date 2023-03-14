@@ -299,7 +299,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         margin-top: 0;
         color: var(--hero-text-color);
         font-weight: 700;
-        font-size: 36px;
+        font-size: 33px;
         line-height: 1.11;
     }
     .hero-bgi {
@@ -658,7 +658,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     position: absolute;
     left: 50%;
     top: 50%;
-    padding: 72px 16px 24px 16px;
+    padding: 24px 16px;
     margin: 0 auto;
     transform: translate(-50%, -50%);
     opacity: 1;
@@ -670,9 +670,9 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     border-radius: 4px;
 }
 .modal-button {
-    position: absolute;
-    top: 24px;
-    right: 24px;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 24px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -693,6 +693,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 .close-icon {
     width: 100%;
     height: 100%;
+    fill: #2E2F42;
 }
 
 /* Modal-table */
@@ -823,9 +824,10 @@ margin-bottom: 16px;
     font-size: 36px;
 }
         /* Secrion Hero */
-
+        
     .hero-title {
             width: 320px;
+            font-size: 36px;
     }
     .hero-bgi {
             max-width: 428px;
