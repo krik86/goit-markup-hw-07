@@ -703,6 +703,7 @@ font-weight: 500;
 text-align: center;
 color: var(--title-text-color);
 margin-bottom: 16px;
+font-size: 11px;
 }
 .label-text {
     font-size: 12px;
@@ -779,12 +780,12 @@ margin-bottom: 16px;
 }
 .checkbox-text {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 8px;
     line-height: 1.33;
     letter-spacing: 0.04em;
 }
 .checkbox-link {
-    font-size: 12px;
+    font-size: 8px;
     line-height: 1.33;
     letter-spacing: 0.04em;
     color: #4D5AE5;
@@ -846,9 +847,18 @@ margin-bottom: 16px;
     .customers {
         justify-content: space-between;
     }
+    .form-title {
+        font-size: 16px;
+        }
 
     .label-privacy {
         align-items: center;
+    }
+    .checkbox-text {
+        font-size: 12px;
+    }
+    .checkbox-link {
+        font-size: 12px;
     }
     
 }
@@ -886,7 +896,7 @@ margin-bottom: 16px;
         /* Modal */
 
         .modal {
-            padding: 72px 24px 24px 24px;
+            padding: 24px;
             max-width: 408px;
             width: calc(100% - 48px);
             height: 586px;
