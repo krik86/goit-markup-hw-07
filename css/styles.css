@@ -669,6 +669,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
+
 .modal-button {
     display: block;
     margin-left: auto;
@@ -699,11 +700,11 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 /* Modal-table */
 
 .form-title {
-font-weight: 500;
-text-align: center;
-color: var(--title-text-color);
-margin-bottom: 16px;
-font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--title-text-color);
+    margin-bottom: 16px;
+    font-size: 11px;
 }
 .label-text {
     font-size: 12px;
@@ -824,6 +825,8 @@ font-size: 11px;
 .mob-contacts .link:hover {
     font-size: 36px;
 }
+
+
         /* Secrion Hero */
         
     .hero-title {
@@ -860,7 +863,6 @@ font-size: 11px;
     .checkbox-link {
         font-size: 12px;
     }
-    
 }
 
 
@@ -1041,7 +1043,7 @@ font-size: 11px;
         /* Modal */
 
         .modal {
-            padding: 72px 24px 24px 24px;
+            padding: 24px;
             max-width: 408px;
             width: calc(100% - 48px);
             height: 584px;
