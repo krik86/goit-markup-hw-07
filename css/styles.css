@@ -69,6 +69,7 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 .main-header {
     display: flex;
     align-items: center;
+    padding: 24px 16px;
 }
 
 
@@ -213,8 +214,8 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     background: transparent;
 }
 .close-menu-icon {
+    display: block;
     width: 100%;
-    height: 100%;
     stroke: #2E2F42;
 }
 .mob-nav-item:not(:last-child) {
@@ -694,8 +695,8 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     fill: #fff;
 }
 .close-icon {
+    display: block;
     width: 100%;
-    height: 100%;
     fill: #2E2F42;
 }
 
@@ -1089,6 +1090,9 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         .feature-text:nth-child(3n),
         .feature-text:nth-child(4n) {
             margin-bottom: 0;
+        }
+        .feature .title {
+            text-align: start;
         }
 
 
